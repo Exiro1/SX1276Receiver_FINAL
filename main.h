@@ -15,6 +15,28 @@ Maintainer: Miguel Luis and Gregory Cristian
 #ifndef __MAIN_H__
 #define __MAIN_H__
 
+void changeConfig(uint8_t id);
+
+uint8_t * getTime();
+
+void updateProcess();
+void getInfo();
+void startProcessing();
+
+void sendFrame(uint8_t* bytes,uint8_t len);
+void sendFrame(const uint8_t* bytes,uint8_t len);
+
+/*!
+ * @brief Init Radio Event 
+ */
+void initRadioEvent();
+
+/*!
+ * @brief Change Radio Parameters
+ */
+void switchRF();
+
+
 /*
  * Callback functions prototypes
  */
@@ -54,3 +76,4 @@ void OnFhssChangeChannel( uint8_t channelIndex );
 void OnCadDone( void );
 
 #endif // __MAIN_H__
+
