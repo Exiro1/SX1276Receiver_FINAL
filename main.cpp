@@ -540,11 +540,8 @@ void startProcessing()
                     char buf[16];
                     sprintf(buf, "SUCCESS;%d;", RssiValue);
                     pc.printf(buf);
-
-                    for(uint8_t j=0; j<BufferSize; j++) {
-                        pc.printf("%02X:", (Buffer[j]/*-1*/));
-                        //pc.putc(Buffer[j]);
-                    }
+                    sendConvertData();
+                   
                     //pc.printf("%c",(Buffer[j]-1));
 
                     //strcpy(text, (char*)Buffer);
@@ -590,11 +587,12 @@ void startProcessing()
     }
 }
 
-void convertData(){
+void sendConvertData(){
 
-
-
-
+ for(uint8_t j=0; j<BufferSize; j++) {
+                        pc.printf("%02X:", (Buffer[j]/*-1*/));
+                        //pc.putc(Buffer[j]);
+    }
 
 }
 
